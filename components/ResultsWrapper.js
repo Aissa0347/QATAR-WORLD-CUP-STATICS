@@ -131,9 +131,9 @@ export function SmallResultBox({ match }) {
             <Image
               className="flex-1"
               src={match.homeTeam.crest || flag}
-              width={"100%"}
-              height={70}
-              objectFit="contain"
+              width={75}
+              height={50}
+              objectFit="cover"
             />
             <h4 className="whitespace-nowrap">{match.homeTeam.name}</h4>
           </div>
