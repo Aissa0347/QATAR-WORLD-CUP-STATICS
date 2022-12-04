@@ -1,9 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Qatar2022 arabic", sans-serif;
 }
 
 a {
@@ -12,5 +15,81 @@ a {
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
+
+h1 {
+  font-size: 32px;
+  text-align: center;
+  @apply md:text-[48px];
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 16px;
+  @apply md:text-2xl;
+}
+
+.h3-text h3 {
+  font-size: 24px !important;
+}
+
+h5 {
+  @apply text-gray-200;
+}
+
+.result h2 {
+  font-size: 32px;
+  line-height: 32px;
+  @apply md:text-[56px] md:leading-[56px];
+}
+
+/* ------------------------------ Global styles ----------------------------- */
+
+.stages-container {
+  @apply text-center mb-4;
+}
+.stages-wrapper {
+  @apply flex flex-wrap justify-center gap-4;
+}
+.stage-header {
+  font-size: 32px;
+  margin-bottom: 1rem;
+}
+
+.carousel .mantine-Carousel-control {
+  opacity: 0;
+  transition: 0.3s ease;
+}
+.carousel:hover .mantine-Carousel-control {
+  opacity: 1;
+}
+
+.mantine-Carousel-control {
+  @apply bg-third text-white border-none shadow-md;
+}
+
+.mantine-Carousel-indicator {
+  @apply bg-gray-500;
+}
+
+.mantine-Accordion-chevron {
+  display: none;
+}
+
+.standings td {
+  white-space: nowrap;
+}
+
+.scroll-Btn {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  @apply bg-primary hover:bg-secondary;
+}
+
+/* ------------------------------- media query ------------------------------ */
