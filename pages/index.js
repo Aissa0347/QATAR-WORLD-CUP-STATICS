@@ -23,7 +23,7 @@ export default function Home({ matchesData, standingsData }) {
   }, [matchesData]);
 
   return (
-    <div className="bg-dark h-max min-w-[100vw]">
+    <div className="bg-dark h-max min-w-[100vw] overflow-hidden ">
       <Head>
         <title>QATAR WORLD CUP</title>
         <meta
@@ -33,7 +33,7 @@ export default function Home({ matchesData, standingsData }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="h-full relative min-w-full">
+      <main className="h-full relative  overflow-hidden">
         <header className="flex flex-col px-4 pb-16 w-full h-max bg-center bg-secondary bg-contain bg-no-repeat bg-[url('../assets/bg.png')]">
           <div className="flex justify-between items-center px-4 pt-8 pb-4 ">
             <Image

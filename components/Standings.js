@@ -23,7 +23,7 @@ function GroupStanding({ standing }) {
     <Paper
       radius="md"
       shadow="md"
-      className="bg-white border pt-4 border-forth h-full  w-full max-w-2xl "
+      className="bg-white border pt-4 border-forth h-full overflow-auto  w-full max-w-2xl "
     >
       <h3 className="text-center">{standing.group.replace("_", " ")}</h3>
       <TableStanding table={standing.table} />

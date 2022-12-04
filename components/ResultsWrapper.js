@@ -126,12 +126,12 @@ export function SmallResultBox({ match }) {
         shadow="sm"
         className="max-w-lg w-full border border-forth bg-white/40"
       >
-        <div className="flex w-full px-4 gap-2 items-center  h-28">
+        <div className="flex w-full max-w-full px-4 gap-2 items-center  h-28">
           <div>
             <Image
               className="flex-1"
               src={match.homeTeam.crest || flag}
-              width={100}
+              width={"100%"}
               height={70}
               objectFit="contain"
             />
@@ -178,7 +178,7 @@ export function SmallResultBox({ match }) {
             <Image
               className="flex-1"
               src={match.awayTeam.crest || flag}
-              width={100}
+              width={"100%"}
               height={70}
               objectFit="contain"
             />
