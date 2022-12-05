@@ -31,10 +31,7 @@ export default function Home({ matchesData, standingsData }) {
         <meta property="og:title" content="نتائج مباريات كأس العالم" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="www.qatar2022.com" />
-        <meta
-          property="og:image"
-          content="https://images.unsplash.com/photo-1637203727318-fb31b63e2377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-        />
+        <meta property="og:image" content="/image.webp" />
         <meta
           property="og:description"
           content="تابع نتائج مباريات كأس العالم فيفا قطر 2022 على المباشر"
