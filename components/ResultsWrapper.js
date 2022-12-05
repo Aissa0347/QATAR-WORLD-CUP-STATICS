@@ -1,4 +1,4 @@
-import { Paper, Accordion, Badge } from "@mantine/core";
+import { Paper, Badge } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import moment from "moment";
 import Image from "next/image";

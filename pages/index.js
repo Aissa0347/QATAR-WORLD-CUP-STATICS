@@ -1,16 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import ResultBox from "../components/resultBox";
 import ResultsWrapper from "../components/ResultsWrapper";
 import Standings from "../components/Standings";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 //* ------------------------------ Import Assets ----------------------------- */
 const logoMark = require("../assets/logoMark.png");
 import tradMark from "../assets/tradMark.png";
-import { ActionIcon, Button, Paper } from "@mantine/core";
+import { ActionIcon, Paper } from "@mantine/core";
 import moment from "moment";
 
 export default function Home({ matchesData, standingsData }) {
@@ -28,9 +26,20 @@ export default function Home({ matchesData, standingsData }) {
         <title>QATAR WORLD CUP</title>
         <meta
           name="description"
-          content="QATAR WORLD CUP STATICS AT REALTIME, EXPLORE ALL MATCHES AND THEIR RESULTS"
+          content="QATAR WORLD CUP STATICS AT REALTIME, EXPLORE YOUR FAVORITE TEAM RESULT"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="نتائج مباريات كأس العالم" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="www.qatar2022.com" />
+        <meta
+          property="og:image"
+          content="https://images.unsplash.com/photo-1637203727318-fb31b63e2377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+        />
+        <meta
+          property="og:description"
+          content="تابع نتائج مباريات كأس العالم فيفا قطر 2022 على المباشر"
+        />
+        <link rel="icon" href="/favicons.ico" />
       </Head>
 
       <main className="h-full relative  overflow-hidden">

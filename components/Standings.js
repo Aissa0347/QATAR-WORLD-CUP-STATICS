@@ -1,5 +1,4 @@
 import { Paper, Table } from "@mantine/core";
-import axios from "axios";
 import { useEffect, useState } from "react";
 
 function Standings({ standingsData }) {
