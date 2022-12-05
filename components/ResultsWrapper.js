@@ -131,15 +131,15 @@ export function SmallResultBox({ match }) {
             <Image
               className="flex-1"
               src={match.homeTeam.crest || flag}
-              width={75}
-              height={50}
+              width={50}
+              height={30}
               objectFit="cover"
             />
-            <h4 className="whitespace-nowrap">{match.homeTeam.name}</h4>
+            <h4 className="team-name">{match.homeTeam.name}</h4>
           </div>
           {match.status === "TIMED" ? (
             <div className="flex-1 ">
-              <Badge mb="sm" size="lg">
+              <Badge mb="sm" size="md">
                 {"TIMED " + " / " + matchDate.format("DD MMM HH:mm")}
               </Badge>
               <div className="flex flex-1 gap-4 justify-center text-center w-full">
@@ -150,7 +150,7 @@ export function SmallResultBox({ match }) {
             <div className="flex-1 ">
               <Badge
                 mb="sm"
-                size="lg"
+                size="md"
                 variant={isPassed ? "dot" : "light"}
                 color={isPassed ? "green" : "orange"}
               >
@@ -178,11 +178,11 @@ export function SmallResultBox({ match }) {
             <Image
               className="flex-1"
               src={match.awayTeam.crest || flag}
-              width={"100%"}
-              height={70}
-              objectFit="contain"
+              width={50}
+              height={30}
+              objectFit="cover"
             />
-            <h4 className="whitespace-nowrap">{match.awayTeam.name}</h4>
+            <h4 className="team-name">{match.awayTeam.name}</h4>
           </div>
         </div>
         {/* <Accordion variant="contained" chevronPosition="left" radius="none">

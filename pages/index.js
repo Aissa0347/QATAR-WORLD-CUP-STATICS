@@ -10,7 +10,7 @@ import axios from "axios";
 //* ------------------------------ Import Assets ----------------------------- */
 const logoMark = require("../assets/logoMark.png");
 import tradMark from "../assets/tradMark.png";
-import { Button, Paper } from "@mantine/core";
+import { ActionIcon, Button, Paper } from "@mantine/core";
 import moment from "moment";
 
 export default function Home({ matchesData, standingsData }) {
@@ -23,7 +23,7 @@ export default function Home({ matchesData, standingsData }) {
   }, [matchesData]);
 
   return (
-    <div className="bg-dark h-max min-w-[100vw] overflow-hidden ">
+    <div className="bg-dark h-max max-w-[100vw] overflow-hidden ">
       <Head>
         <title>QATAR WORLD CUP</title>
         <meta
@@ -58,30 +58,33 @@ export default function Home({ matchesData, standingsData }) {
             </svg>
           </div>
           <div className="w-full flex-1 items-center flex flex-col">
-            <h1 className="text-white mt-12 mb-8">WORLD CUP QATAR</h1>
+            <h1 className="text-white  mt-8 mb-4 md:mt-12 md:mb-8">
+              WORLD CUP QATAR
+            </h1>
             <div className="carousel  rounded-xl py-4  md:px-12 px-4 shadow-2xl max-w-[1000px] w-full  bg-gray-100">
               <ResultBox matches={matches} />
-              <Paper
-                className="flex gap-4 flex-col-reverse md:gap-8 md:flex-row justify-center items-center w-fit mx-auto"
-                radius="md"
-                shadow="sm"
-                p={16}
-              >
-                <Image
-                  height={50}
-                  width={200}
-                  objectFit="contain"
-                  src={tradMark}
-                ></Image>
-                <h3 className="text-gray-600">{`MATCH PLAYED : ${resultSet.played}/${resultSet.count}`}</h3>
-                <h3 className="text-gray-600">
-                  {moment(resultSet.first).format("DD MMM Y")}
-                  {" / "}
-                  {moment(resultSet.last).format("DD MMM Y")}
-                </h3>
-              </Paper>
             </div>
           </div>
+          <Paper
+            className="flex gap-2 md:gap-4 flex-col-reverse  md:flex-row justify-center items-center w-fit mx-auto"
+            radius="md"
+            shadow="sm"
+            mt={8}
+            p={16}
+          >
+            <Image
+              height={40}
+              width={120}
+              objectFit="contain"
+              src={tradMark}
+            ></Image>
+            <h3 className="text-gray-600 text-lg leading-5">{`MATCH PLAYED : ${resultSet.played}/${resultSet.count}`}</h3>
+            <h3 className="text-gray-600 text-lg leading-5">
+              {moment(resultSet.first).format("DD MMM Y")}
+              {" / "}
+              {moment(resultSet.last).format("DD MMM Y")}
+            </h3>
+          </Paper>
         </header>
         <div className="h-full bg-gray-100 py-8 px-4">
           <h2 className="text-center my-6 h3-text">ALL MATCHES</h2>
@@ -91,14 +94,15 @@ export default function Home({ matchesData, standingsData }) {
           <h2 className="text-center my-6 h3-text">STANDINGS</h2>
           <Standings standingsData={standingsData} />
         </div>
-        <Button
+        <ActionIcon
           className="scroll-Btn"
+          size="lg"
           onClick={() =>
             window.scrollTo({ left: 0, top: 0, behavior: "smooth" })
           }
         >
-          scroll Top
-        </Button>
+          <div className="gg-chevron-up"></div>
+        </ActionIcon>
       </main>
       <Footer />
     </div>

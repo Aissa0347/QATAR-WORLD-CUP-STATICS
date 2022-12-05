@@ -19,13 +19,14 @@ a {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 30px;
   text-align: center;
   @apply md:text-[48px];
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 24px;
+  @apply md:text-[36px];
 }
 
 h3 {
@@ -48,6 +49,38 @@ h5 {
   @apply md:text-[56px] md:leading-[56px];
 }
 
+.team-name {
+  font-size: 12px;
+  line-height: 14px;
+  @apply md:text-lg;
+}
+
+.gg-chevron-up {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 22px;
+  height: 22px;
+  border: 2px solid transparent;
+  border-radius: 100px;
+}
+
+.gg-chevron-up::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(-45deg);
+  left: 4px;
+  bottom: 2px;
+  border-color: white;
+}
+
 /* ------------------------------ Global styles ----------------------------- */
 
 .stages-container {
@@ -57,8 +90,9 @@ h5 {
   @apply flex flex-wrap justify-center gap-4;
 }
 .stage-header {
-  font-size: 32px;
+  font-size: 18px;
   margin-bottom: 1rem;
+  @apply md:text-[32px];
 }
 
 .carousel .mantine-Carousel-control {
@@ -86,9 +120,10 @@ h5 {
 }
 
 .scroll-Btn {
+  box-shadow: -1px 3px 18px #00000036;
   position: fixed;
-  bottom: 40px;
-  right: 20px;
+  bottom: 30px;
+  left: 20px;
   @apply bg-primary hover:bg-secondary;
 }
 
