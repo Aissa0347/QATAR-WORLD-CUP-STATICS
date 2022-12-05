@@ -44,9 +44,9 @@ h5 {
 }
 
 .result h2 {
-  font-size: 32px;
-  line-height: 32px;
-  @apply md:text-[56px] md:leading-[56px];
+  font-size: 24px;
+  line-height: 24px;
+  @apply sm:text-[32px] md:text-[56px] md:leading-[56px];
 }
 
 .team-name {

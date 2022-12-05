@@ -2,16 +2,15 @@ import Image from "next/image";
 import { Carousel } from "@mantine/carousel";
 import moment from "moment";
 import Autoplay from "embla-carousel-autoplay";
+import { useMediaQuery } from "@mantine/hooks";
 //* ------------------------------ Import Assets ----------------------------- */
-import flag from "../assets/spain.webp";
-import tradMark from "../assets/tradMark.png";
-import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { Badge } from "@mantine/core";
 
 function ResultBox({ matches }) {
   const [heroMatches, setHeroMatches] = useState([]);
   const autoplay = useRef(Autoplay({ delay: 2000 }));
+  const isLarger = useMediaQuery("(min-width: 500px)");
 
   useEffect(() => {
     function getCurrentMatches(matches) {
@@ -49,9 +48,12 @@ function ResultBox({ matches }) {
                 <div className="flex h-full flex-col gap-4 items-center justify-around flex-1">
                   {heroMatch.status === "TIMED" ? (
                     <div className="flex flex-col h-full gap-4 justify-center items-center">
-                      <Badge size="lg" color="indigo">
+                      <Badge size={isLarger ? "lg" : "sm"} color="indigo">
                         {heroMatch.status}{" "}
-                        {moment.utc(heroMatch.utcDate).local().format("HH:mm")}
+                        {moment
+                          .utc(heroMatch.utcDate)
+                          .local()
+                          .format("HH:mm DD/MM")}
                       </Badge>
                       <Timer heroMatch={heroMatch} />
                       <div className="text-center">
@@ -61,7 +63,7 @@ function ResultBox({ matches }) {
                   ) : (
                     <div className="flex flex-col items-center w-full">
                       <Badge
-                        size="lg"
+                        size={isLarger ? "lg" : "sm"}
                         color={
                           heroMatch.status === "IN_PLAY" ? "green" : "indigo"
                         }
@@ -124,7 +126,7 @@ export function Timer({ heroMatch }) {
   }, [heroMatch]);
 
   return (
-    <div className="result flex w-full">
+    <div className="result justify-center flex w-full">
       <h2>{time}</h2>
     </div>
   );

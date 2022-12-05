@@ -1,4 +1,5 @@
 import { Paper, Accordion, Badge } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import moment from "moment";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -118,6 +119,7 @@ function ResultsWrapper({ matches }) {
 export function SmallResultBox({ match }) {
   let matchDate = moment.utc(match.utcDate).local();
   let isPassed = match.status === "IN_PLAY";
+  const isLarger = useMediaQuery("(min-width: 500px)");
 
   return (
     <>
@@ -139,7 +141,7 @@ export function SmallResultBox({ match }) {
           </div>
           {match.status === "TIMED" ? (
             <div className="flex-1 ">
-              <Badge mb="sm" size="md">
+              <Badge mb="sm" size={isLarger ? "lg" : "sm"}>
                 {"TIMED " + " / " + matchDate.format("DD MMM HH:mm")}
               </Badge>
               <div className="flex flex-1 gap-4 justify-center text-center w-full">
@@ -150,7 +152,7 @@ export function SmallResultBox({ match }) {
             <div className="flex-1 ">
               <Badge
                 mb="sm"
-                size="md"
+                size={isLarger ? "lg" : "sm"}
                 variant={isPassed ? "dot" : "light"}
                 color={isPassed ? "green" : "orange"}
               >
